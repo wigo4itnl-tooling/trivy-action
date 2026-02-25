@@ -37,10 +37,6 @@ test:
 update-golden:
 	UPDATE_GOLDEN=1 TRIVY_CMD=$(TRIVY_CMD) $(BATS_ENV) bats $(BATS_FLAGS)
 
-.PHONY: init-cache
-init-cache:
-	mkdir -p $(CACHE_DIR)
-
 .PHONY: clean-cache
 clean-cache:
 	$(TRIVY_CMD) clean --scan-cache --cache-dir $(CACHE_DIR)
